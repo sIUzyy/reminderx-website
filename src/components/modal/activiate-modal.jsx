@@ -11,6 +11,9 @@ import { ArrowDownToLine } from "lucide-react";
 // ---- react ----
 import { useState } from "react";
 
+// ---- library ----
+import { saveAs } from "file-saver"; // file-saver
+
 export default function ActivateModal({ open, setOpen }) {
   // ---- state to handle input
   const [inputValue, setInputValue] = useState("");
@@ -19,21 +22,32 @@ export default function ActivateModal({ open, setOpen }) {
   const [rxModel] = useState("reminderx_v1_2025");
 
   // ---- loading and error state
-  //   const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
   const handleDownload = () => {
-    // check if its empty
-    if (!inputValue) {
-      setError("Model field cannot be empty.");
-      return; // Stops execution if input is empty
-    }
-    if (inputValue === rxModel) {
-      console.log("Successfully download...");
-      setOpen(false);
-    } else {
-      setError("Model does not exist. Please check your model and try again.");
-    }
+    setIsLoading(true);
+
+    setTimeout(() => {
+      if (!inputValue) {
+        setError("Model field cannot be empty.");
+        setIsLoading(false);
+        return;
+      }
+
+      if (inputValue === rxModel) {
+        const fileUrl = `/apk/application-aee53c11-3b41-42a3-b7e6-f3465d7cae9a.apk`;
+
+        saveAs(fileUrl, `reminderx.apk`); // triggers download
+        setOpen(false);
+      } else {
+        setError(
+          "Model does not exist. Please check your model and try again."
+        );
+      }
+
+      setIsLoading(false); // Stop loading after execution
+    }, 500); // Small delay to simulate loading
   };
 
   return (
@@ -91,15 +105,21 @@ export default function ActivateModal({ open, setOpen }) {
               <button
                 type="button"
                 onClick={handleDownload}
-                className="outline-none inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:opacity-80 cursor-pointer sm:ml-3 sm:w-auto"
+                className={
+                  isLoading
+                    ? "outline-none inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-xs opacity-50 cursor-progress sm:ml-3 sm:w-auto"
+                    : "outline-none inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:opacity-80 cursor-pointer sm:ml-3 sm:w-auto"
+                }
+                disabled={isLoading}
               >
-                Download App
+                {isLoading ? "Downloading..." : "Download App"}
               </button>
               <button
                 type="button"
                 data-autofocus
                 onClick={() => setOpen(false)}
                 className="cursor-pointer outline-none mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                disabled={isLoading}
               >
                 Cancel
               </button>

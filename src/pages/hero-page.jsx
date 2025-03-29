@@ -1,5 +1,6 @@
 // ---- assets ----
 import videoFile from "../assets/video/mobile-app.mp4";
+import reminderx from "../assets/video/reminderx.mp4";
 import pushNotif from "../assets/img/push-notif.png";
 import sms from "../assets/img/sms-img.png";
 
@@ -106,21 +107,16 @@ export default function HeroPage() {
                 </p>
               </div>
               <div className="relative min-h-[30rem] w-full grow">
-                <div className="absolute top-10 right-0 bottom-0 left-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl">
-                  <div className="flex bg-gray-800/40 ring-1 ring-white/5">
-                    <div className="-mb-px flex text-sm/6 font-medium text-gray-400">
-                      <div className="border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white">
-                        NotificationSetting.jsx
-                      </div>
-                      <div className="border-r border-gray-600/10 px-4 py-2">
-                        App.jsx
-                      </div>
-                    </div>
-                  </div>
-                  <div className="px-6 pt-6 pb-14">
-                    {/* Your code example */}
-                  </div>
-                </div>
+                <video
+                  className="w-full max-w-[600px] sm:max-w-[400px] h-[520px] aspect-video rounded-lg object-cover "
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={reminderx} type="video/webm" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
