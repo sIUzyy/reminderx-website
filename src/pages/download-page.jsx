@@ -49,8 +49,8 @@ export default function DownloadPage() {
                 Boost your medication management. Start using our app today.
               </h2>
               <p className="mt-6 text-lg/8 text-pretty text-gray-300">
-                RemindeRx: A Smart Medicine Storage with Notification through a
-                Wearable Device and Mobile App for Enhanced Health Management
+                Reminderx: A Medicine Dispensing Device with Notifications
+                through a Mobile App
               </p>
               <div className="mt-10 ">
                 <button
@@ -67,7 +67,7 @@ export default function DownloadPage() {
                 src={downloadApp}
                 width={1824}
                 height={1080}
-                className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md "
               />
             </div>
           </div>

@@ -1,6 +1,6 @@
 // ---- assets ----
-import videoFile from "../assets/video/mobile-app.mp4";
-import reminderx from "../assets/video/reminderx.mp4";
+import mobile from "../assets/video/mobile-app-v2.mp4";
+import reminderx from "../assets/video/reminderx-v2.mp4";
 import pushNotif from "../assets/img/push-notif.png";
 import sms from "../assets/img/sms-img.png";
 
@@ -37,7 +37,7 @@ export default function HeroPage() {
                   muted
                   playsInline
                 >
-                  <source src={videoFile} type="video/webm" />
+                  <source src={mobile} type="video/webm" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -53,10 +53,10 @@ export default function HeroPage() {
                   Push Notification
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  Get real-time alerts when it's time to take your medication,
-                  when stock levels are low to 2, or when new max sensor data is
-                  detected—ensuring you stay informed and in control of your
-                  health.
+                  Get real-time alerts when it’s time to take your medication or
+                  when stock levels drop to 2. If you miss a dose, the system
+                  will send up to 3 push notifications—keeping you informed and
+                  on track with your medication schedule.
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
@@ -100,10 +100,11 @@ export default function HeroPage() {
                   Smart Pillbox
                 </p>
                 <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-                  Monitor your heart rate and oxygen saturation with the
-                  built-in MAX sensor. With a spacious 5-compartment design,
-                  easily refill and retrieve your medication when
-                  needed—ensuring you never miss a dose.
+                  With a 3-compartment design, each capable of holding up to 11
+                  pills, this reminderx dispenser automatically releases your
+                  medication at the right time. If a dose is missed, a built-in
+                  buzzer will alert you—making it easier than ever to stay on
+                  track with your medication.
                 </p>
               </div>
               <div className="relative min-h-[30rem] w-full grow">

@@ -19,7 +19,7 @@ export default function ActivateModal({ open, setOpen }) {
   const [inputValue, setInputValue] = useState("");
 
   // ---- state for rx model
-  const [rxModel] = useState("reminderx_v1_2025");
+  const [rxModel] = useState("reminderx_v2_2025");
 
   // ---- loading and error state
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +36,7 @@ export default function ActivateModal({ open, setOpen }) {
       }
 
       if (inputValue === rxModel) {
-        const fileUrl = `/apk/application-aee53c11-3b41-42a3-b7e6-f3465d7cae9a.apk`;
+        const fileUrl = `https://github.com/sIUzyy/reminderx-website/releases/download/v1.8.0/application-93458b6b-5bd0-462d-8802-0552503c1c32.apk`;
 
         saveAs(fileUrl, `reminderx.apk`); // triggers download
         setOpen(false);
