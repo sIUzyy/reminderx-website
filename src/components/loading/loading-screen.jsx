@@ -4,7 +4,7 @@ export default function LoadingScreen() {
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-[#1C1C1C]">
       <video
-        className="w-full sm:max-w-[300px] h-[320px] aspect-video "
+        className="w-[200px] sm:max-w-[300px] h-[320px] aspect-video "
         autoPlay
         loop
         muted
